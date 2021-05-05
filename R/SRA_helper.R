@@ -204,7 +204,7 @@ download.SRA.metadata <- function(SRP, outdir, remove.invalid = TRUE) {
   if (file.exists(destfile)) {
     message(paste("Existing metadata file found in dir:", outdir, "will not download"))
   } else {
-    url <- "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=runinfo&term="
+    url <- "https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?save=efetch&db=sra&rettype=xml&term="
     url <- paste0(url, SRP)
     download.file(url, destfile = destfile)
   }
